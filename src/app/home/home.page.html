@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Hola!! un gusto tenerte acá
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-img src="/assets/shapes.svg"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>Noticias frescas</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Es hora de ponernos al día de lo que está pasando</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>Comencemos</ion-label>
+      </ion-list-header>
+        <ion-button color="primary" expand="block" (click)="pag_iniciar()">ya tengo cuenta</ion-button>
+        <ion-button color="secondary" expand="block" (click)=pag_resgistrar()>Registrarme</ion-button>
+    </ion-list>
+</ion-content>

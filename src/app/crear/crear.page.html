@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Nueva noticia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  padding>
+    <ion-label>Tipo de evento</ion-label>
+    <ion-item>
+        <ion-label>Eventos</ion-label>
+        <ion-select [(ngModel)]="titulo">
+          <ion-select-option value="Arte">Arte</ion-select-option>
+          <ion-select-option value="Gastronomia">Gastronomia</ion-select-option>
+          <ion-select-option value="Deporte">Deporte</ion-select-option>
+          <ion-select-option value="Danza">Danza</ion-select-option>
+          <ion-select-option value="Tecnología">Tecnología</ion-select-option>
+          <ion-select-option value="Juegos">Juegos</ion-select-option>
+        </ion-select>
+    </ion-item>
+          <ion-label>Descripción</ion-label>
+    <ion-item>
+      <textarea [(ngModel)]="descripcion" rows="8" cols="30"></textarea>
+   </ion-item>
+         <ion-label>Fecha del evento</ion-label>
+   <ion-item>
+     <ion-input type="Date" [(ngModel)]="fecha"></ion-input>
+  </ion-item>
+  <br>
+  <br>
+  <br>
+  <ion-item>
+      <ion-button shape="round" size="large" color="secondary" (click)="posicion()">
+        <ion-icon name="locate"></ion-icon>
+      </ion-button>
+        <!--
+        <ion-input type="text" >{{lat}}</ion-input>
+        <ion-input type="text" >{{lng}}</ion-input>
+      -->
+  </ion-item>
+  <ion-item>
+    <ion-input type="file"  (change)="uploadFile($event)"></ion-input>
+    <div>{{ uploadPercent | async }}</div>
+    <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+  </ion-item>
+
+      <ion-button shape="round" size="large" color="tertiary" (click)="publicar()">
+        Publicar
+      <ion-icon name="checkmark"></ion-icon>
+      </ion-button>
+
+</ion-content>

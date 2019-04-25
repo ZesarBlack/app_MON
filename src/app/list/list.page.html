@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!--
+    <ion-title>
+      <div *ngIf="afAuth.user | async as user; else showLogin">
+      <h1>{{ user.email }}</h1>
+    </div>
+    </ion-title>
+  -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let item of items | async">
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>{{item.titulo}} <br> {{item.fecha}}</ion-label>
+        <ion-button fill="outline" slot="end" (click)="ver(item.lat, item.lng, item.descripcion, item.img_id)" >Ver</ion-button>
+      </ion-item>
+
+      <ion-card-content>
+      <h3>{{item.descripcion}}</h3>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
